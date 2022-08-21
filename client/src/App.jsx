@@ -8,17 +8,17 @@ import { Home } from "./components/pages/home/Home";
 import { NotFound } from "./components/pages/notFound/NotFound";
 import { Login } from "./components/pages/register/Login";
 import { SignUp } from "./components/pages/register/SignUp";
-import { Shop } from "./components/pages/shop/Shop";
+import { Shop } from "./components/pages/shop/shopPage/ShopPage";
 
 const App = () => {
   return (
     <Fragment>
       <Header />
       <Routes>
-        <Route path="/" exact element={<Home />} />
+        <Route path="/" index exact element={<Home />} />
         <Route path="/login" exact element={<Login />} />
         <Route path="/sign-up" exact element={<SignUp />} />
-        <Route path="/shop" exact element={<Shop />} />
+        <Route path="/shop/*" exact element={<Shop />} />
         <Route path="/checkout" exact element={<Checkout />} />
         <Route path="*" exact element={<NotFound />} />
       </Routes>
