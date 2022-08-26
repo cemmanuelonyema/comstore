@@ -16,11 +16,11 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" index exact element={<Home />} />
-        <Route path="/login" exact element={<Login />} />
-        <Route path="/sign-up" exact element={<SignUp />} />
-        <Route path="/shop/*" exact element={<Shop />} />
-        <Route path="/checkout" exact element={<Checkout />} />
-        <Route path="*" exact element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/shop/*" element={<Shop />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Fragment>
   );
