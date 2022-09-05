@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./register.module.scss";
+import "./register.scss";
 
 export const Login = () => {
   //initial  user state
@@ -25,14 +25,14 @@ export const Login = () => {
   };
 
   return (
-    <section className={styles.register_container}>
-      Login
-      <div className={styles.register_right}>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
+    <section className="page__container">
+      <div className="left">Sidebar</div>
+      <div className="right">
+        <form onSubmit={handleSubmit} className="form">
+          <div className="form__group">
             <label htmlFor="email">Email Address</label>
             <input
-              className={styles.form_input}
+              className="form__input"
               onChange={handleChange}
               placeholder="mail@address.com"
               value={email}
@@ -40,10 +40,10 @@ export const Login = () => {
               name="email"
             />
           </div>
-          <div className="form-group">
+          <div className="form__group">
             <label htmlFor="`password`">Password</label>
             <input
-              className={styles.form_input}
+              className="form__input"
               onChange={handleChange}
               placeholder="password"
               value={password}
@@ -52,16 +52,15 @@ export const Login = () => {
             />
           </div>
 
-          <div className={styles.btn__group}>
+          <div className="btn__group">
             <button type="submit">Login</button>
-            <Link to="/sign-up" className={styles.btn__group_link}>
+            <Link to="/sign-up" className="btn__group">
               {" "}
               <button>I don't have an account, Sign Up</button>
             </Link>
           </div>
         </form>
       </div>
-      <div className={styles.register_left}> sidebar left</div>
     </section>
   );
 };

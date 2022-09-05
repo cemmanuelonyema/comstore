@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./register.module.scss";
+import "./register.scss";
 
 export const SignUp = () => {
   //initial  user state
@@ -29,14 +29,14 @@ export const SignUp = () => {
   };
 
   return (
-    <section className={styles.register_container}>
-      SignUp
-      <div className={styles.register_right}>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
+    <section className="page__container">
+      <div className="left">Sidebar</div>
+      <div className="right">
+        <form onSubmit={handleSubmit} className="form">
+          <div className="form__group">
             <label htmlFor="name">Full Name</label>
             <input
-              className={styles.form_input}
+              className="form__input"
               onChange={handleChange}
               placeholder="first - last name"
               value={name}
@@ -44,10 +44,10 @@ export const SignUp = () => {
               name="name"
             />
           </div>
-          <div className="form-group">
+          <div className="form__group">
             <label htmlFor="email">Email Address</label>
             <input
-              className={styles.form_input}
+              className="form__input"
               onChange={handleChange}
               placeholder="mail@address.com"
               value={email}
@@ -55,10 +55,10 @@ export const SignUp = () => {
               name="email"
             />
           </div>
-          <div className="form-group">
+          <div className="form__group">
             <label htmlFor="`password`">Password</label>
             <input
-              className={styles.form_input}
+              className="form__input"
               onChange={handleChange}
               placeholder="password"
               value={password}
@@ -66,10 +66,10 @@ export const SignUp = () => {
               name="password"
             />
           </div>
-          <div className="form-group">
+          <div className="form__group">
             <label htmlFor="password">Confirm Password</label>
             <input
-              className={styles.form_input}
+              className="form__input"
               onChange={handleChange}
               placeholder="confirm password"
               value={password2}
@@ -77,16 +77,15 @@ export const SignUp = () => {
               name="password2"
             />
           </div>
-          <div className={styles.btn__group}>
+          <div className="btn__group">
             <input type="submit" value="Sign Up" className="btn btn-primary" />
-            <Link to="/login" className={styles.btn__group_link}>
+            <Link to="/login" className="btn btn-secondary">
               {" "}
               <button>I have an account, Log In</button>
             </Link>
           </div>
         </form>
       </div>
-      <div className={styles.register_left}> sidebar left</div>
     </section>
   );
 };
