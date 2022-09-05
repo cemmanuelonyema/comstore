@@ -1,0 +1,39 @@
+@import "../../../styles/abstract/mixins";
+
+.form {
+  &_input {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+  }
+}
+
+.register_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.register_left {
+  padding: 2rem;
+  background-color: black;
+  color: white;
+
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.btn__group {
+  display: flex;
+  flex-direction: column;
+
+  &_link {
+    display: block;
+  }
+}

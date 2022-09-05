@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import "./App.css";
+import "./styles/App.module.scss";
 import { Header } from "./components/layout/header/Header";
 import { Checkout } from "./components/pages/checkout/Checkout";
 import { Home } from "./components/pages/home/Home";

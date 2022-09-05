@@ -29,14 +29,14 @@ export const SignUp = () => {
   };
 
   return (
-    <div className={styles.signUp_container}>
+    <section className={styles.register_container}>
       SignUp
-      <div></div>
-      <div>
+      <div className={styles.register_right}>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
             <input
+              className={styles.form_input}
               onChange={handleChange}
               placeholder="first - last name"
               value={name}
@@ -47,6 +47,7 @@ export const SignUp = () => {
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
             <input
+              className={styles.form_input}
               onChange={handleChange}
               placeholder="mail@address.com"
               value={email}
@@ -57,6 +58,7 @@ export const SignUp = () => {
           <div className="form-group">
             <label htmlFor="`password`">Password</label>
             <input
+              className={styles.form_input}
               onChange={handleChange}
               placeholder="password"
               value={password}
@@ -67,6 +69,7 @@ export const SignUp = () => {
           <div className="form-group">
             <label htmlFor="password">Confirm Password</label>
             <input
+              className={styles.form_input}
               onChange={handleChange}
               placeholder="confirm password"
               value={password2}
@@ -74,15 +77,16 @@ export const SignUp = () => {
               name="password2"
             />
           </div>
-          <div className="btn-group">
-            <button type="submit">Sign Up</button>
-            <Link to="/login">
+          <div className={styles.btn__group}>
+            <input type="submit" value="Sign Up" className="btn btn-primary" />
+            <Link to="/login" className={styles.btn__group_link}>
               {" "}
               <button>I have an account, Log In</button>
             </Link>
           </div>
         </form>
       </div>
-    </div>
+      <div className={styles.register_left}> sidebar left</div>
+    </section>
   );
 };
