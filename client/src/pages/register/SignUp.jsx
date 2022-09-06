@@ -1,90 +1,100 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+// import { FaCheck, FaInfoCircle, FaTimes } from "react-icons/fa";
 import "./register.scss";
 
+const USER_REGEX = /^[a-zA-Z][a-zA-z0-9-_]{3,23}$/;
+const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+
 export const SignUp = () => {
-  //initial  user state
+  //refs
+  const userRef = useRef();
+  const errRef = useRef();
+
+  //Local State
+  const [validName, setValidName] = useState(false);
+  const [userFocus, setUserFocus] = useState(false);
   const [user, setUser] = useState({
     name: "",
     email: "",
     password: "",
     password2: "",
   });
-
   const { name, email, password, password2 } = user;
 
-  //copy and update user state
+  //Methods
   const handleChange = (e) =>
     setUser({ ...user, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("User", user);
-    setUser({
-      name: "",
-      email: "",
-      password: "",
-      password2: "",
-    });
-  };
-
+  const handleSubmit = () => {};
   return (
     <section className="page__container">
-      <div className="left">Sidebar</div>
+      <div className="left">
+        {/* <FaCheck />
+        <FaInfoCircle />
+        <FaTimes /> */}
+      </div>
+
       <div className="right">
-        <form onSubmit={handleSubmit} className="form">
-          <div className="form__group">
-            <label htmlFor="name">Full Name</label>
+        <div className="form__container">
+          <h1>Sign up</h1>
+          <h3>Your one stop luxury men stuffs</h3>
+          <p>
+            Let's get you back quickly so you can start buying all your needs{" "}
+          </p>
+
+          <form onSubmit={handleSubmit} className="form">
+            <div className="form_group">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleChange}
+                placeholder="first name"
+              />
+            </div>
+            <div className="form_group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+                placeholder="address@mail.com"
+              />
+            </div>
+            <div className="form_group">
+              <label className="htmlFor=''password">Password</label>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+                placeholder="password"
+              />
+            </div>
+            <div className="form_group">
+              <label className="htmlFor=''email">Confirm Password</label>
+              <input
+                type="password"
+                name="password2"
+                value={password2}
+                onChange={handleChange}
+                placeholder="password confirmation"
+              />
+            </div>
             <input
-              className="form__input"
-              onChange={handleChange}
-              placeholder="first - last name"
-              value={name}
-              type="name"
-              name="name"
+              type="submit"
+              value="Register"
+              className="btn btn-primary btn-block"
             />
-          </div>
-          <div className="form__group">
-            <label htmlFor="email">Email Address</label>
-            <input
-              className="form__input"
-              onChange={handleChange}
-              placeholder="mail@address.com"
-              value={email}
-              type="email"
-              name="email"
-            />
-          </div>
-          <div className="form__group">
-            <label htmlFor="`password`">Password</label>
-            <input
-              className="form__input"
-              onChange={handleChange}
-              placeholder="password"
-              value={password}
-              type="password"
-              name="password"
-            />
-          </div>
-          <div className="form__group">
-            <label htmlFor="password">Confirm Password</label>
-            <input
-              className="form__input"
-              onChange={handleChange}
-              placeholder="confirm password"
-              value={password2}
-              type="password"
-              name="password2"
-            />
-          </div>
-          <div className="btn__group">
-            <input type="submit" value="Sign Up" className="btn btn-primary" />
-            <Link to="/login" className="btn btn-secondary">
-              {" "}
-              <button>I have an account, Log In</button>
-            </Link>
-          </div>
-        </form>
+
+            <span>
+              Already have an account? <Link to="/login">Login</Link>
+            </span>
+          </form>
+        </div>
       </div>
     </section>
   );

@@ -4,10 +4,10 @@ import "./header.scss";
 
 export const Header = () => {
   return (
-    <div>
+    <header>
       <Link to="/">Home</Link>
       <Link to="/sign-up">Sign up</Link>
       <Link to="/login">login</Link>
-    </div>
+    </header>
   );
 };

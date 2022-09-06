@@ -5,12 +5,12 @@ import { ProductCategories } from "../productCollections/ProductCategories";
 
 export const Shop = () => {
   return (
-    <div>
+    <section>
       Shop
       <Routes>
         <Route path="/" element={<ProductCategories />} />
         <Route path=":collectionId" element={<Collection />} />
       </Routes>
-    </div>
+    </section>
   );
 };
