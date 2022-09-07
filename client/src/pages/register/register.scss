@@ -1,38 +1,118 @@
-@import "../../styles/abstract/mixins";
-.form {
-  &_input {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.2rem;
-    border: 1px solid #ccc;
-  }
+.page__container {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.register_container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  @include respond(phone) {
-    grid-template-columns: 1fr;
-  }
+.left {
+  width: 40vw;
+  height: 100vh;
 }
 
-.register_left {
-  padding: 2rem;
+.right {
+  width: 60vw;
+}
+
+.left {
+  flex: 1;
   background-color: black;
-  color: white;
-
-  @include respond(phone) {
-    display: none;
-  }
+  border: 3px solid blue;
 }
 
-.btn__group {
+.right {
+  flex: 1;
+}
+
+.form_group {
+  margin: 1.5rem 0;
+}
+
+.form_group input {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+/* Forms */
+/* 
+
+input {
+  margin: 1.2rem 0;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: #888;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"],
+button {
+  font: inherit;
+}
+
+.form-group {
+  margin: 1.2rem 0;
+}
+
+.form-group input {
+  margin: 0.2rem 0;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.form-container h1,
+h2,
+h3 {
+  text-align: center;
+} */
+
+.form__container {
+  max-width: 400px;
+  margin: auto;
+  padding: 3rem;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 
-  &_link {
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+
+  span {
     display: block;
+    margin-top: 1rem;
   }
 }

@@ -1,13 +1,11 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "./components/layout/header/Header";
 
-import React from "react";
+import React, { Fragment } from "react";
 
 export const LayoutRoute = () => {
   return (
-    <main>
-      <Header />
+    <Fragment>
       <Outlet />
-    </main>
+    </Fragment>
   );
 };
